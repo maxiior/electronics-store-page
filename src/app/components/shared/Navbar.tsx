@@ -62,15 +62,18 @@ const Navbar = () => {
             );
           })}
         </div>
-        <div className="border-2 border-white rounded-xl px-3 py-1 text-white flex items-center justify-center gap-2 cursor-pointer font-nunito hover:text-main hover:border-main transition">
+        <Link
+          className="border-2 border-white rounded-xl px-3 py-1 text-white flex items-center justify-center gap-2 cursor-pointer font-nunito hover:text-main hover:border-main transition"
+          href="/koszyk"
+        >
           <div className="text-sm">Koszyk</div>
           <div className="bg-main text-white text-xs font-bold w-4 h-4 flex items-center justify-center rounded-full">
             0
           </div>
-        </div>
+        </Link>
         <button
           onClick={toggleMobileMenu}
-          className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors cursor-pointer text-black dark:text-white dark:hover:text-black"
+          className="md:hidden p-2 rounded-lg hover:text-main transition-colors cursor-pointer text-white"
         >
           {isMobileMenuOpen ? (
             <XMarkIcon className="w-8 h-8" />
@@ -79,38 +82,20 @@ const Navbar = () => {
           )}
         </button>
       </div>
-      {/* {isMobileMenuOpen && (
-        <div className="md:hidden py-10">
+      {isMobileMenuOpen && (
+        <div className="md:hidden py-10 bg-black">
           {menuItems.map((item) => (
             <div key={item.label} onClick={toggleMobileMenu}>
               <Link
                 href={item.href}
-                className="block py-5 text-center hover:bg-wcpink hover:text-white transition-colors text-black dark:text-white"
+                className="block py-5 text-center hover:bg-wcpink hover:bg-main transition-colors text-white"
               >
                 {item.label}
               </Link>
             </div>
           ))}
-          <div>
-            <button
-              onClick={toggleTheme}
-              className="w-full cursor-pointer py-5 text-center hover:bg-wcpink hover:text-white transition-colors text-black dark:text-white flex justify-center items-center"
-            >
-              {theme === "dark" ? (
-                <>
-                  <SunIcon className="w-5 h-5 mr-2" />
-                  <div>Light mode</div>
-                </>
-              ) : (
-                <>
-                  <MoonIcon className="w-5 h-5 mr-2" />
-                  <div>Dark mode</div>
-                </>
-              )}
-            </button>
-          </div>
         </div>
-      )} */}
+      )}
     </nav>
   );
 };

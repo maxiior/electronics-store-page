@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Nunito_Sans, Montserrat } from "next/font/google";
 import Navbar from "./components/shared/Navbar";
 import "./globals.css";
+import Footer from "./components/shared/Footer";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -29,7 +30,8 @@ export default function RootLayout({
         className={`${nunitoSans.variable} antialiased font-montserrat bg-black`}
       >
         <Navbar />
-        {children}
+        <main className="min-h-screen">{children}</main>
+        <Footer />
       </body>
     </html>
   );
