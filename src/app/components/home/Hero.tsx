@@ -15,6 +15,7 @@ const Hero = () => {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer eget
           felis suscipit, laoreet ex vitae, auctor arcu. Sed urna ante, tempor
           nec imperdiet vitae, tempor at leo.
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias, ullam impedit ducimus tenetur minima libero voluptatum, mollitia esse perspiciatis, officia nobis architecto repellat repudiandae quae distinctio iste tempore exercitationem molestiae.
         </div>
         <div className="flex items-center gap-2">
           <button className="text-white bg-main text-left px-8 py-2 rounded-3xl font-nunito cursor-pointer flex items-center transition duration-200 hover:scale-105">
