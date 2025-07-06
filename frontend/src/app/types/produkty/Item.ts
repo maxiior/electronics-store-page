@@ -1,10 +1,13 @@
 export interface ItemInterface {
+  id: number;
   title: string;
-  price: number;
-  quickDescription?: string;
+  preTitle?: string;
+  quickDescription: string;
   fullDescription?: string;
-  id: string;
+  price: number;
   urlBuyNow: string;
-  image: string;
-  bestseller: boolean;
+  bestseller?: boolean;
+  mainImage: {
+    url: string;
+  };
 }
