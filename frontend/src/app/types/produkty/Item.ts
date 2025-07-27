@@ -10,4 +10,15 @@ export interface ItemInterface {
   mainImage: {
     url: string;
   };
+  order: number;
+  guarantee: number;
+  category?: string;
+  urlInstruction: string;
+  vat: number;
+  weight: number;
+}
+
+export interface CartItem {
+  id: number;
+  quantity: number;
 }

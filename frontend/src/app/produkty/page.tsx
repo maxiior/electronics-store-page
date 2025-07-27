@@ -1,18 +1,10 @@
 "use client";
 
 import Products from "../components/shared/Products";
-import { fetchAllProducts } from "@/app/api/produkty";
-import { useEffect, useState } from "react";
-import { ItemInterface } from "@/app/types/produkty/Item";
+import { useProductsTheme } from "../context/ProductsContext";
 
 const Produkty = () => {
-  const [products, setProducts] = useState<ItemInterface[]>([]);
-
-  useEffect(() => {
-    fetchAllProducts()
-      .then((e) => setProducts(e.data))
-      .catch(console.error);
-  }, []);
+  const { products } = useProductsTheme();
 
   return (
     <section className="py-[100px]">

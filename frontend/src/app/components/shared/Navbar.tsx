@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { usePathname } from "next/navigation";
 import { FiShoppingCart } from "react-icons/fi";
+import { useCartTheme } from "@/app/context/CartContext";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState<boolean>(false);
@@ -11,6 +12,7 @@ const Navbar = () => {
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
+  const { getCartItemCount } = useCartTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,7 +72,7 @@ const Navbar = () => {
           >
             <div className="text-sm">Koszyk</div>
             <div className="bg-main text-white text-xs font-bold w-4 h-4 flex items-center justify-center rounded-full">
-              0
+              {getCartItemCount()}
             </div>
           </Link>
         </div>
@@ -78,7 +80,7 @@ const Navbar = () => {
           <Link href="/koszyk" className="relative hover:text-main text-white">
             <FiShoppingCart className="p-2 rounded-lg transition-colors cursor-pointer w-10 h-10" />
             <div className="bg-main text-white text-xs font-bold w-4 h-4 flex items-center justify-center rounded-full absolute right-0 top-1/2">
-              0
+              {getCartItemCount()}
             </div>
           </Link>
           <button

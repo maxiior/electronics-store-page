@@ -3,6 +3,8 @@ import { Nunito_Sans, Montserrat } from "next/font/google";
 import Navbar from "./components/shared/Navbar";
 import "./globals.css";
 import Footer from "./components/shared/Footer";
+import { ProductsContext } from "./context/ProductsContext";
+import { CartContext } from "./context/CartContext";
 
 const nunitoSans = Nunito_Sans({
   variable: "--font-nunito-sans",
@@ -29,9 +31,13 @@ export default function RootLayout({
       <body
         className={`${nunitoSans.variable} antialiased font-montserrat bg-black`}
       >
-        <Navbar />
-        <main className="min-h-screen">{children}</main>
-        <Footer />
+        <CartContext>
+          <ProductsContext>
+            <Navbar />
+            <main className="min-h-screen">{children}</main>
+            <Footer />
+          </ProductsContext>
+        </CartContext>
       </body>
     </html>
   );
